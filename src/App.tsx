@@ -1,39 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Questionaire from './Questionaire';
 
-interface AppProps {}
-
-function App({}: AppProps) {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
+function App() {
+  let filledOutAlready = localStorage.getItem('name');
   useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+    if (window.location.search.indexOf('clear') >= 0) {
+      localStorage.removeItem('name');
+      filledOutAlready = null;
+    }
+  }, [filledOutAlready]);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
+        <h1>Superbowl LV Prop Bets</h1>
       </header>
+      {filledOutAlready ? (
+        <div>You filled this out already</div>
+      ) : (
+        <Questionaire />
+      )}
     </div>
   );
 }
