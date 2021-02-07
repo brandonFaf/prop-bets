@@ -21,7 +21,7 @@ const Question: React.FC<{
       <div
         style={{
           display: 'grid',
-          gridAutoFlow: 'column',
+          gridAutoFlow: 'row',
           gridTemplateColumns: '1fr 1fr',
           gridTemplateRows: 'auto 1fr',
           columnGap: 10,
