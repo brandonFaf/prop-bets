@@ -15,11 +15,11 @@ const Questionaire = () => {
     console.log(state);
     if (!name) {
       setError('Please enter your name');
-    } else if (state.length !== questions.length) {
+    } else if (state.filter((x) => x).length !== questions.length) {
       setError('Please answer all the questions');
     } else {
       setError('');
-      const ref = await db.collection('responses').doc(name);
+      const ref = await db.collection('responses').doc(name.toLowerCase());
       const doc = ref.get();
       if ((await doc).exists) {
         setError('Name is taken. Please pick a new name');

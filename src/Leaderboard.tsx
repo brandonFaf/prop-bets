@@ -46,7 +46,15 @@ const Leaderboard = ({ name }: { name: string }) => {
               return (
                 <li key={i} style={{ marginBottom: 15, color: correct }}>
                   <div>{question.text}</div>
-                  <div style={{ display: 'grid', gridAutoFlow: 'column' }}>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridAutoFlow: 'column',
+                      gridTemplateColumns: '1fr 1fr',
+                      gridTemplateRows: 'auto 1fr',
+                      columnGap: 10,
+                    }}
+                  >
                     {question.answers.map((a, j) => (
                       <div key={j}>
                         <span
@@ -60,7 +68,9 @@ const Leaderboard = ({ name }: { name: string }) => {
                             color: question.final
                               ? question.final == a.letter
                                 ? 'green'
-                                : 'red'
+                                : answers[i]?.value == a.letter
+                                ? 'white'
+                                : 'white'
                               : 'white',
                           }}
                         >
@@ -68,6 +78,9 @@ const Leaderboard = ({ name }: { name: string }) => {
                         </span>
                       </div>
                     ))}
+                    {question.answers.length == 0 && (
+                      <div>{answers[i]?.value}</div>
+                    )}
                   </div>
                 </li>
               );
@@ -82,6 +95,7 @@ const Leaderboard = ({ name }: { name: string }) => {
             <th>Rank</th>
             <th>Name</th>
             <th>Score</th>
+            <th>TB Guess</th>
           </tr>
         </thead>
         <tbody>
@@ -89,7 +103,7 @@ const Leaderboard = ({ name }: { name: string }) => {
             .sort(
               ({ score: ascore = 0 }, { score: bscore = 0 }) => bscore - ascore,
             )
-            .map(({ name: lName, score = 0 }, i) => {
+            .map(({ name: lName, score = 0, responses }, i) => {
               const rank = prev == -1 || prev != score ? `${i + 1}.` : '';
               prev = score;
               return (
@@ -102,6 +116,7 @@ const Leaderboard = ({ name }: { name: string }) => {
                   <td>{rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>
+                  <td>{responses[11]?.value}</td>
                 </tr>
               );
             })}
