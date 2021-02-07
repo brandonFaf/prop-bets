@@ -8,6 +8,7 @@ function App() {
     if (window.location.search.indexOf('clear') >= 0) {
       localStorage.removeItem('name');
       name = null;
+      window.location.href = window.location.origin;
     }
   }, [name]);
 

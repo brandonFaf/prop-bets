@@ -16,7 +16,6 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 1:59' },
       { letter: 'b', value: 'over 1:59' },
     ],
-    final: 'a',
   },
   {
     id: 1,
@@ -25,7 +24,6 @@ const questions: Question[] = [
       { letter: 'a', value: 'heads' },
       { letter: 'b', value: 'tails' },
     ],
-    final: 'b',
   },
   {
     id: 2,
@@ -34,7 +32,6 @@ const questions: Question[] = [
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
-    final: 'b',
   },
   {
     id: 3,
@@ -45,7 +42,6 @@ const questions: Question[] = [
       { letter: 'c', value: 'Michelob Ultra' },
       { letter: 'd', value: 'Michelob Ultra Organic Seltzer' },
     ],
-    final: 'd',
   },
   {
     id: 4,
@@ -54,7 +50,6 @@ const questions: Question[] = [
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
-    final: 'a',
   },
   {
     id: 5,
