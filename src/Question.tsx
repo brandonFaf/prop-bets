@@ -39,7 +39,12 @@ const Question: React.FC<{
           </div>
         ))}
         {question.answers.length == 0 && (
-          <input type="number" value={value} onChange={handleChange} />
+          <input
+            type="text"
+            inputMode="numeric"
+            value={value}
+            onChange={handleChange}
+          />
         )}
       </div>
     </li>
