@@ -25,6 +25,7 @@ final:"b"
       { letter: 'a', value: 'heads' },
       { letter: 'b', value: 'tails' },
     ],
+final:"a"
   },
   {
     id: 2,
