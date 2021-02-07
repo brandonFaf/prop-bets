@@ -1,24 +1,22 @@
 import React, { useEffect } from 'react';
+import Leaderboard from './Leaderboard';
 import Questionaire from './Questionaire';
 
 function App() {
-  let filledOutAlready = localStorage.getItem('name');
+  let name = localStorage.getItem('name');
   useEffect(() => {
     if (window.location.search.indexOf('clear') >= 0) {
       localStorage.removeItem('name');
-      filledOutAlready = null;
+      name = null;
     }
-  }, [filledOutAlready]);
+  }, [name]);
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Superbowl LV Prop Bets</h1>
       </header>
-      {filledOutAlready ? (
-        <div>You filled this out already</div>
-      ) : (
-        <Questionaire />
-      )}
+      {name ? <Leaderboard name={name} /> : <Questionaire />}
     </div>
   );
 }

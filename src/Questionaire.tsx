@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import questions from './data/questions';
 import Question from './Question';
+import { db } from './data/firebaseConfig';
 export interface UserResponse {
   value: string;
 }
-
 const Questionaire = () => {
   const [state, setState] = useState<UserResponse[]>([]);
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<string>();
   const [showThanks, setShowThanks] = useState<boolean>(false);
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     console.log(state);
     if (!name) {
@@ -19,8 +19,24 @@ const Questionaire = () => {
       setError('Please answer all the questions');
     } else {
       setError('');
-      localStorage.setItem('name', name);
-      setShowThanks(true);
+      const ref = await db.collection('responses').doc(name);
+      const doc = ref.get();
+      if ((await doc).exists) {
+        setError('Name is taken. Please pick a new name');
+        return;
+      } else {
+        ref
+          .set({
+            name,
+            responses: state,
+          })
+          .catch(() => {
+            setError('Error Saving');
+            throw new Error();
+          });
+        localStorage.setItem('name', name);
+        setShowThanks(true);
+      }
     }
   };
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {

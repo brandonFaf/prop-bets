@@ -6,6 +6,7 @@ export interface Question {
   id: number;
   text: string;
   answers: Answer[];
+  final?: string;
 }
 const questions: Question[] = [
   {
@@ -15,6 +16,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 1:59' },
       { letter: 'b', value: 'over 1:59' },
     ],
+    final: 'a',
   },
   {
     id: 1,
