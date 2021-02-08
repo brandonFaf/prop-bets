@@ -122,7 +122,6 @@ final:"d"
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],
-final:"40"
   },
 ];
 export default questions;
