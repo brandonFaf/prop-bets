@@ -53,6 +53,7 @@ final:"a"
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
+final:"b"
   },
   {
     id: 5,
@@ -93,6 +94,7 @@ final:"d"
       { letter: 'a', value: 'First Half' },
       { letter: 'b', value: 'Second Half' },
     ],
+final:"a"
   },
   {
     id: 9,
