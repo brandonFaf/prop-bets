@@ -44,6 +44,7 @@ final:"a"
       { letter: 'c', value: 'Michelob Ultra' },
       { letter: 'd', value: 'Michelob Ultra Organic Seltzer' },
     ],
+final:"a"
   },
   {
     id: 4,
