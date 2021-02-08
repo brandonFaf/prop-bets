@@ -61,6 +61,7 @@ final:"a"
       { letter: 'a', value: 'under 24.5' },
       { letter: 'b', value: 'over 24.5' },
     ],
+final:"b"
   },
   {
     id: 6,
