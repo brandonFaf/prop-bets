@@ -104,6 +104,7 @@ final:"a"
       { letter: 'b', value: 'Chiefs' },
     ],
   },
+final:"a"
   {
     id: 10,
     text: 'What color liquid will be poured on the winning coach?',
@@ -114,11 +115,13 @@ final:"a"
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
   },
+final:"d"
   {
     id: 11,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],
+final:"40"
   },
 ];
 export default questions;
