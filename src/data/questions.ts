@@ -34,6 +34,7 @@ final:"a"
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
+final:"b"
   },
   {
     id: 3,
