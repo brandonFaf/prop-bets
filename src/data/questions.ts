@@ -104,8 +104,9 @@ final:"a"
       { letter: 'a', value: 'Buccaneers' },
       { letter: 'b', value: 'Chiefs' },
     ],
-  },
 final:"a"
+  },
+
   {
     id: 10,
     text: 'What color liquid will be poured on the winning coach?',
@@ -115,8 +116,9 @@ final:"a"
       { letter: 'c', value: 'Yellow/Green' },
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
-  },
 final:"d"
+  },
+
   {
     id: 11,
     text:
