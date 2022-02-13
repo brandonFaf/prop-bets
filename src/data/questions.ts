@@ -43,8 +43,9 @@ final:'a'
       { letter: 'a', value: 'Budweiser' },
       { letter: 'b', value: 'Bud Light Next' },
       { letter: 'c', value: 'Michelob Ultra' },
-      { letter: 'b', value: 'Bud Light Seltzer Hard Soda' },
+      { letter: 'd', value: 'Bud Light Seltzer Hard Soda' },
     ],
+final:'b'
   },
   {
     id: 4,
