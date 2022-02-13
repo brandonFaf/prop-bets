@@ -13,10 +13,9 @@ const questions: Question[] = [
     id: 0,
     text: 'How long will the National Anthem Last?',
     answers: [
-      { letter: 'a', value: 'under 1:59' },
-      { letter: 'b', value: 'over 1:59' },
+      { letter: 'a', value: 'under 1:40' },
+      { letter: 'b', value: 'over 1:40' },
     ],
-final:"b"
   },
   {
     id: 1,
@@ -25,27 +24,25 @@ final:"b"
       { letter: 'a', value: 'heads' },
       { letter: 'b', value: 'tails' },
     ],
-final:"a"
   },
   {
     id: 2,
-    text: 'Will an M&M Spokescandy be wearing a mask?',
+    text: 'Which media company’s commercial will air first?',
     answers: [
-      { letter: 'a', value: 'yes' },
-      { letter: 'b', value: 'no' },
+      { letter: 'a', value: 'Meta' },
+      { letter: 'b', value: 'Amazon Prime' },
+      { letter: 'c', value: 'Google' },
     ],
-final:"b"
   },
   {
     id: 3,
     text: 'Which Anheuser-Busch brand commercial will air first?',
     answers: [
-      { letter: 'a', value: 'Bud Light' },
-      { letter: 'b', value: 'Bud Light Seltzer Lemonade' },
+      { letter: 'a', value: 'Budweiser' },
+      { letter: 'b', value: 'Bud Light Next' },
       { letter: 'c', value: 'Michelob Ultra' },
-      { letter: 'd', value: 'Michelob Ultra Organic Seltzer' },
+      { letter: 'b', value: 'Bud Light Seltzer Hard Soda' },
     ],
-final:"a"
   },
   {
     id: 4,
@@ -54,7 +51,6 @@ final:"a"
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
-final:"b"
   },
   {
     id: 5,
@@ -64,29 +60,28 @@ final:"b"
       { letter: 'a', value: 'under 24.5' },
       { letter: 'b', value: 'over 24.5' },
     ],
-final:"b"
   },
   {
     id: 6,
-    text: 'What will be the first song played during the halftime show?',
+    text:
+      'What will be performing the first song played during the halftime show?',
     answers: [
-      { letter: 'a', value: 'Starboy' },
-      { letter: 'b', value: 'Blinding Lights' },
-      { letter: 'c', value: "Can't feel my face" },
-      { letter: 'd', value: 'Anything else' },
+      { letter: 'a', value: 'Emninem' },
+      { letter: 'b', value: 'Snoop Dogg' },
+      { letter: 'c', value: 'Dr. Dre' },
+      { letter: 'd', value: 'Mary J blige' },
+      { letter: 'e', value: 'Kendrick Lamar' },
     ],
-final:"a"
   },
   {
     id: 7,
-    text: 'Who will be a special guest performer in the halftime show?',
+    text:
+      'What color will Snoop Dogg’s first shoes be during the halftime performance?',
     answers: [
-      { letter: 'a', value: 'Ariana Grande' },
-      { letter: 'b', value: 'Drake' },
-      { letter: 'c', value: 'Anyone Else' },
-      { letter: 'd', value: 'No One Else' },
+      { letter: 'a', value: 'Black White Gray/Silver' },
+      { letter: 'b', value: 'Blue Green Purple' },
+      { letter: 'c', value: 'Yellow/Gold Orange Red' },
     ],
-final:"d"
   },
   {
     id: 8,
@@ -95,16 +90,14 @@ final:"d"
       { letter: 'a', value: 'First Half' },
       { letter: 'b', value: 'Second Half' },
     ],
-final:"a"
   },
   {
     id: 9,
-    text: 'Who will be the last team to score?',
+    text: 'Who will be the first team to score?',
     answers: [
-      { letter: 'a', value: 'Buccaneers' },
-      { letter: 'b', value: 'Chiefs' },
+      { letter: 'a', value: 'Bengals' },
+      { letter: 'b', value: 'Rams' },
     ],
-final:"a"
   },
 
   {
@@ -116,11 +109,28 @@ final:"a"
       { letter: 'c', value: 'Yellow/Green' },
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
-final:"d"
+  },
+  {
+    id: 11,
+    text: 'Who will have the lead at the end of the 3rd Quarter?',
+    answers: [
+      { letter: 'a', value: 'Bengals' },
+      { letter: 'b', value: 'Rams' },
+    ],
+  },
+  {
+    id: 12,
+    text: 'How many Field Goals will be scored in the first half?',
+    answers: [
+      { letter: 'a', value: '0' },
+      { letter: 'b', value: '1' },
+      { letter: 'c', value: '2' },
+      { letter: 'd', value: 'more than 2' },
+    ],
   },
 
   {
-    id: 11,
+    id: 13,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],

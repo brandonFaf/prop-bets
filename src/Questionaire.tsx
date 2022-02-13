@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import questions from './data/questions';
 import Question from './Question';
 import { db } from './data/firebaseConfig';
@@ -10,17 +10,30 @@ const Questionaire = () => {
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<string>();
   const [showThanks, setShowThanks] = useState<boolean>(false);
+  useEffect(() => {
+    if (window.location.search.indexOf('name') >= 0) {
+      const url = new URL(window.location.toString());
+      const params = new URLSearchParams(url.search);
+      const n = params.get('name');
+      if (n) {
+        setName(n);
+      }
+    }
+  }, [window.location]);
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     console.log(state);
     if (!name) {
       setError('Please enter your name');
-    } else if (state.filter((x) => x).length !== questions.length) {
+    } else if (
+      state.filter((x) => x).length !== questions.filter((x) => !x.final).length
+    ) {
       setError('Please answer all the questions');
     } else {
       setError('');
       const ref = await db.collection('responses').doc(name.toLowerCase());
       const doc = ref.get();
+      const responses = state.map((x) => (x ? x : { value: '' }));
       if ((await doc).exists) {
         setError('Name is taken. Please pick a new name');
         return;
@@ -28,13 +41,13 @@ const Questionaire = () => {
         ref
           .set({
             name,
-            responses: state,
+            responses,
           })
           .catch(() => {
             setError('Error Saving');
             throw new Error();
           });
-        localStorage.setItem('name', name);
+        localStorage.setItem('name56', name);
         setShowThanks(true);
       }
     }

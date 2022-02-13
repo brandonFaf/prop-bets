@@ -116,7 +116,7 @@ const Leaderboard = ({ name }: { name: string }) => {
                   <td>{rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>
-                  <td>{responses[11]?.value}</td>
+                  <td>{responses[13]?.value}</td>
                 </tr>
               );
             })}
