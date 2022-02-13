@@ -62,6 +62,7 @@ final:'a'
       { letter: 'a', value: 'under 24.5' },
       { letter: 'b', value: 'over 24.5' },
     ],
+final:'a'
   },
   {
     id: 6,
@@ -100,6 +101,7 @@ final:'a'
       { letter: 'a', value: 'Bengals' },
       { letter: 'b', value: 'Rams' },
     ],
+final:'b'
   },
 
   {
