@@ -77,6 +77,7 @@ final:'a'
       { letter: 'd', value: 'Mary J blige' },
       { letter: 'e', value: 'Kendrick Lamar' },
     ],
+final:'b'
   },
   {
     id: 7,
@@ -87,6 +88,7 @@ final:'a'
       { letter: 'b', value: 'Blue Green Purple' },
       { letter: 'c', value: 'Yellow/Gold Orange Red' },
     ],
+final:'a'
   },
   {
     id: 8,
