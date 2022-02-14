@@ -133,6 +133,7 @@ final:'b'
       { letter: 'c', value: '2' },
       { letter: 'd', value: 'more than 2' },
     ],
+final:'b'
   },
 
   {
