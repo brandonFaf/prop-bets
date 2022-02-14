@@ -55,6 +55,7 @@ final:'b'
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
+final:'b'
   },
   {
     id: 5,
@@ -97,6 +98,7 @@ final:'a'
       { letter: 'a', value: 'First Half' },
       { letter: 'b', value: 'Second Half' },
     ],
+final:'a'
   },
   {
     id: 9,
@@ -117,6 +119,7 @@ final:'b'
       { letter: 'c', value: 'Yellow/Green' },
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
+final:'d'
   },
   {
     id: 11,
@@ -125,6 +128,7 @@ final:'b'
       { letter: 'a', value: 'Bengals' },
       { letter: 'b', value: 'Rams' },
     ],
+final:'a'
   },
   {
     id: 12,
