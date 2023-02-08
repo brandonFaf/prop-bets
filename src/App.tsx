@@ -5,10 +5,10 @@ import { comingSoon } from './data/config';
 import ComingSoon from './ComingSoon';
 
 function App() {
-  let name = localStorage.getItem('name56');
+  let name = localStorage.getItem('name57');
   useEffect(() => {
     if (window.location.search.indexOf('clear') >= 0) {
-      localStorage.removeItem('name56');
+      localStorage.removeItem('name57');
       name = null;
       window.location.href = window.location.origin;
     }
@@ -19,7 +19,7 @@ function App() {
   ) : (
     <div className="App">
       <header className="App-header">
-        <h1>Superbowl LVI Prop Bets</h1>
+        <h1>Superbowl LVII Prop Bets</h1>
       </header>
       {name ? <Leaderboard name={name} /> : <Questionaire />}
     </div>

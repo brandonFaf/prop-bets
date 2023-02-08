@@ -47,7 +47,7 @@ const Questionaire = () => {
             setError('Error Saving');
             throw new Error();
           });
-        localStorage.setItem('name56', name);
+        localStorage.setItem('name57', name);
         setShowThanks(true);
       }
     }
