@@ -16,7 +16,6 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 1:40' },
       { letter: 'b', value: 'over 1:40' },
     ],
-final:'b'
   },
   {
     id: 1,
@@ -25,37 +24,31 @@ final:'b'
       { letter: 'a', value: 'heads' },
       { letter: 'b', value: 'tails' },
     ],
-final:'a'
   },
   {
     id: 2,
-    text: 'Which media company’s commercial will air first?',
+    text: 'Which beer company will be mentioned in a commerical first?',
     answers: [
-      { letter: 'a', value: 'Meta' },
-      { letter: 'b', value: 'Amazon Prime' },
-      { letter: 'c', value: 'Google' },
+      { letter: 'a', value: 'Bud Lite' },
+      { letter: 'b', value: 'Coors Lite' },
+      { letter: 'c', value: 'Miller Lite' },
     ],
-final:'a'
   },
   {
     id: 3,
-    text: 'Which Anheuser-Busch brand commercial will air first?',
+    text: 'Who will win the Super Bowl?',
     answers: [
-      { letter: 'a', value: 'Budweiser' },
-      { letter: 'b', value: 'Bud Light Next' },
-      { letter: 'c', value: 'Michelob Ultra' },
-      { letter: 'd', value: 'Bud Light Seltzer Hard Soda' },
+      { letter: 'a', value: 'Chiefs' },
+      { letter: 'b', value: 'Eagles' },
     ],
-final:'b'
   },
   {
     id: 4,
-    text: 'Will the score ever be tied again after it is 0-0?',
+    text: 'Will both teams have the lead at some point during the fist half?',
     answers: [
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
-final:'b'
   },
   {
     id: 5,
@@ -65,49 +58,48 @@ final:'b'
       { letter: 'a', value: 'under 24.5' },
       { letter: 'b', value: 'over 24.5' },
     ],
-final:'a'
   },
   {
     id: 6,
     text:
-      'What will be performing the first song played during the halftime show?',
+      "What will be the color of Rihanna's first outfit in the halftime show?",
     answers: [
-      { letter: 'a', value: 'Emninem' },
-      { letter: 'b', value: 'Snoop Dogg' },
-      { letter: 'c', value: 'Dr. Dre' },
-      { letter: 'd', value: 'Mary J blige' },
-      { letter: 'e', value: 'Kendrick Lamar' },
+      { letter: 'a', value: 'Black' },
+      { letter: 'b', value: 'Gold' },
+      { letter: 'c', value: 'Silver/Grey' },
+      { letter: 'd', value: 'White' },
+      { letter: 'e', value: 'Green' },
+      { letter: 'f', value: 'Red' },
+      { letter: 'g', value: 'Other' },
     ],
-final:'b'
   },
   {
     id: 7,
-    text:
-      'What color will Snoop Dogg’s first shoes be during the halftime performance?',
+    text: 'Will a football be used as a prop during the halftime show?',
     answers: [
-      { letter: 'a', value: 'Black White Gray/Silver' },
-      { letter: 'b', value: 'Blue Green Purple' },
-      { letter: 'c', value: 'Yellow/Gold Orange Red' },
+      { letter: 'a', value: 'Yes' },
+      { letter: 'b', value: 'No' },
     ],
-final:'a'
   },
   {
-    id: 8,
-    text: 'Will more points be scored in the _____?',
+    id: 6,
+    text: "What will be Rihanna's lasat song at the halftime show?",
     answers: [
-      { letter: 'a', value: 'First Half' },
-      { letter: 'b', value: 'Second Half' },
+      { letter: 'a', value: 'Diamonds' },
+      { letter: 'b', value: 'Run this Town' },
+      { letter: 'c', value: 'Umbrella' },
+      { letter: 'd', value: "Don't stop the music" },
+      { letter: 'e', value: 'We found love' },
+      { letter: 'f', value: 'Other' },
     ],
-final:'a'
   },
   {
     id: 9,
     text: 'Who will be the first team to score?',
     answers: [
-      { letter: 'a', value: 'Bengals' },
-      { letter: 'b', value: 'Rams' },
+      { letter: 'a', value: 'Chiefs' },
+      { letter: 'b', value: 'Eagles' },
     ],
-final:'b'
   },
 
   {
@@ -119,16 +111,14 @@ final:'b'
       { letter: 'c', value: 'Yellow/Green' },
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
-final:'d'
   },
   {
     id: 11,
-    text: 'Who will have the lead at the end of the 3rd Quarter?',
+    text: 'Will Maya Rudolph appear in an M&Ms commercial?',
     answers: [
-      { letter: 'a', value: 'Bengals' },
-      { letter: 'b', value: 'Rams' },
+      { letter: 'a', value: 'Yes' },
+      { letter: 'b', value: 'No' },
     ],
-final:'a'
   },
   {
     id: 12,
@@ -139,11 +129,25 @@ final:'a'
       { letter: 'c', value: '2' },
       { letter: 'd', value: 'more than 2' },
     ],
-final:'b'
   },
-
+  {
+    id: 12,
+    text: 'Which company will be seen first in a commercial?',
+    answers: [
+      { letter: 'a', value: 'Doritos' },
+      { letter: 'b', value: 'Pringles' },
+    ],
+  },
   {
     id: 13,
+    text: 'Will the game go into overtime?',
+    answers: [
+      { letter: 'a', value: 'Yes' },
+      { letter: 'b', value: 'No' },
+    ],
+  },
+  {
+    id: 14,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],
