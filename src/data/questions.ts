@@ -55,8 +55,8 @@ const questions: Question[] = [
     text:
       'Will the jersey number of the player who scores the first touchdown be __?',
     answers: [
-      { letter: 'a', value: 'under 24.5' },
-      { letter: 'b', value: 'over 24.5' },
+      { letter: 'a', value: 'under 11.5' },
+      { letter: 'b', value: 'over 11.5' },
     ],
   },
   {
@@ -122,7 +122,7 @@ const questions: Question[] = [
   },
   {
     id: 12,
-    text: 'How many Field Goals will be scored in the first half?',
+    text: 'How many Field Goals will be scored in the second half?',
     answers: [
       { letter: 'a', value: '0' },
       { letter: 'b', value: '1' },
@@ -148,6 +148,16 @@ const questions: Question[] = [
   },
   {
     id: 15,
+    text: 'Will the last score of the game be...?',
+    answers: [
+      { letter: 'a', value: 'Rushing' },
+      { letter: 'b', value: 'Passing' },
+      { letter: 'c', value: 'Other' },
+    ],
+  },
+
+  {
+    id: 16,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],
