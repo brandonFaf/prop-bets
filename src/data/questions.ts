@@ -60,6 +60,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 11.5' },
       { letter: 'b', value: 'over 11.5' },
     ],
+    final:'a'
   },
   {
     id: 6,
@@ -102,6 +103,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Chiefs' },
       { letter: 'b', value: 'Eagles' },
     ],
+    final:'b'
   },
 
   {
