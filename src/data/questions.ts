@@ -16,6 +16,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 1:40' },
       { letter: 'b', value: 'over 1:40' },
     ],
+    final: 'b',
   },
   {
     id: 1,
@@ -82,7 +83,7 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     text: "What will be Rihanna's lasat song at the halftime show?",
     answers: [
       { letter: 'a', value: 'Diamonds' },
@@ -131,7 +132,7 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     text: 'Which company will be seen first in a commercial?',
     answers: [
       { letter: 'a', value: 'Doritos' },
@@ -139,7 +140,7 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     text: 'Will the game go into overtime?',
     answers: [
       { letter: 'a', value: 'Yes' },
@@ -147,7 +148,7 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 14,
+    id: 15,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],

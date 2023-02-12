@@ -28,6 +28,7 @@ const Questionaire = () => {
     } else if (
       state.filter((x) => x).length !== questions.filter((x) => !x.final).length
     ) {
+      console.log(state.filter((x) => x).length, '!=', questions.filter((x) => !x.final).length)
       setError('Please answer all the questions');
     } else {
       setError('');
