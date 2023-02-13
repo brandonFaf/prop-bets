@@ -25,7 +25,8 @@ const Leaderboard = ({ name }: { name: string }) => {
         }
         return { ...data, score };
       });
-      setResults(allResults);
+      const winner = allResults.find((x) => x.name == 'Tyler Redbeard');
+      setResults([winner!, ...allResults.filter((x) => x != winner)]);
     };
     getData();
   }, [name]);
@@ -110,14 +111,12 @@ const Leaderboard = ({ name }: { name: string }) => {
                 <tr
                   style={{
                     backgroundColor:
-                      score == 8 && responses[13]?.value == '61'
-                        ? 'yellow'
-                        : '',
+                      score == 8 && responses[16]?.value == '6' ? 'yellow' : '',
                   }}
                   key={lName}
                 >
                   <td>
-                    {score == 8 && responses[13]?.value == '61' ? '⭐️' : rank}
+                    {score == 8 && responses[16]?.value == '61' ? '⭐️' : rank}
                   </td>
                   <td>{lName}</td>
                   <td>{score}</td>
