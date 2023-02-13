@@ -75,6 +75,7 @@ const questions: Question[] = [
       { letter: 'f', value: 'Red' },
       { letter: 'g', value: 'Other' },
     ],
+    final:'f'
   },
   {
     id: 7,
