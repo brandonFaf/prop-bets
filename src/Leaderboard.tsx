@@ -25,7 +25,7 @@ const Leaderboard = ({ name }: { name: string }) => {
         }
         return { ...data, score };
       });
-      const winner = allResults.find((x) => x.name == 'Tyler Redbeard');
+      const winner = allResults.find((x) => x.name == 'Tim Miller');
       setResults([winner!, ...allResults.filter((x) => x != winner)]);
     };
     getData();
@@ -108,16 +108,8 @@ const Leaderboard = ({ name }: { name: string }) => {
               const rank = prev == -1 || prev != score ? `${i + 1}.` : '';
               prev = score;
               return (
-                <tr
-                  style={{
-                    backgroundColor:
-                      score == 8 && responses[16]?.value == '6' ? 'yellow' : '',
-                  }}
-                  key={lName}
-                >
-                  <td>
-                    {score == 8 && responses[16]?.value == '61' ? '⭐️' : rank}
-                  </td>
+                <tr key={lName}>
+                  <td>{score == 10 ? '⭐️' : rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>
                   <td>{responses[16]?.value}</td>

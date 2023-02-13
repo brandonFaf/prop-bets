@@ -35,7 +35,7 @@ const questions: Question[] = [
       { letter: 'b', value: 'Coors Lite' },
       { letter: 'c', value: 'Miller Lite' },
     ],
-    final:'b'
+    final: 'b',
   },
   {
     id: 3,
@@ -44,6 +44,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Chiefs' },
       { letter: 'b', value: 'Eagles' },
     ],
+    final: 'a',
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
-    final:'b'
+    final: 'b',
   },
   {
     id: 5,
@@ -62,7 +63,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'under 11.5' },
       { letter: 'b', value: 'over 11.5' },
     ],
-    final:'a'
+    final: 'a',
   },
   {
     id: 6,
@@ -77,7 +78,7 @@ const questions: Question[] = [
       { letter: 'f', value: 'Red' },
       { letter: 'g', value: 'Other' },
     ],
-    final:'f'
+    final: 'f',
   },
   {
     id: 7,
@@ -86,7 +87,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
-    final:'b'
+    final: 'b',
   },
   {
     id: 8,
@@ -99,7 +100,7 @@ const questions: Question[] = [
       { letter: 'e', value: 'We found love' },
       { letter: 'f', value: 'Other' },
     ],
-    final:'a'
+    final: 'a',
   },
   {
     id: 9,
@@ -108,7 +109,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Chiefs' },
       { letter: 'b', value: 'Eagles' },
     ],
-    final:'b'
+    final: 'b',
   },
 
   {
@@ -120,6 +121,7 @@ const questions: Question[] = [
       { letter: 'c', value: 'Yellow/Green' },
       { letter: 'd', value: 'Blue/Purple/Clear' },
     ],
+    final: 'd',
   },
   {
     id: 11,
@@ -128,7 +130,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
-    final:'a'
+    final: 'a',
   },
   {
     id: 12,
@@ -139,7 +141,7 @@ const questions: Question[] = [
       { letter: 'c', value: '2' },
       { letter: 'd', value: 'more than 2' },
     ],
-    final:'c'
+    final: 'c',
   },
   {
     id: 13,
@@ -148,7 +150,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Doritos' },
       { letter: 'b', value: 'Pringles' },
     ],
-    final:'b'
+    final: 'b',
   },
   {
     id: 14,
@@ -157,7 +159,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
-    final:'b'
+    final: 'b',
   },
   {
     id: 15,
@@ -167,7 +169,7 @@ const questions: Question[] = [
       { letter: 'b', value: 'Passing' },
       { letter: 'c', value: 'Other' },
     ],
-    final:'c'
+    final: 'c',
   },
 
   {
