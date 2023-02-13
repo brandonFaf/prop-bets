@@ -110,14 +110,14 @@ const Leaderboard = ({ name }: { name: string }) => {
                 <tr
                   style={{
                     backgroundColor:
-                      score == 8 && responses[13]?.value == '42'
+                      score == 8 && responses[13]?.value == '61'
                         ? 'yellow'
                         : '',
                   }}
                   key={lName}
                 >
                   <td>
-                    {score == 8 && responses[13]?.value == '42' ? '⭐️' : rank}
+                    {score == 8 && responses[13]?.value == '61' ? '⭐️' : rank}
                   </td>
                   <td>{lName}</td>
                   <td>{score}</td>
