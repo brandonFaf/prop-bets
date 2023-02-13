@@ -139,6 +139,7 @@ const questions: Question[] = [
       { letter: 'c', value: '2' },
       { letter: 'd', value: 'more than 2' },
     ],
+    final:'c'
   },
   {
     id: 13,
@@ -156,6 +157,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
+    final:'b'
   },
   {
     id: 15,
@@ -165,6 +167,7 @@ const questions: Question[] = [
       { letter: 'b', value: 'Passing' },
       { letter: 'c', value: 'Other' },
     ],
+    final:'c'
   },
 
   {
