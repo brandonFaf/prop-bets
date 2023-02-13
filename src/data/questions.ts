@@ -123,6 +123,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
+    final:'a'
   },
   {
     id: 12,
