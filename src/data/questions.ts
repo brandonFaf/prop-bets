@@ -52,6 +52,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'yes' },
       { letter: 'b', value: 'no' },
     ],
+    final:'b'
   },
   {
     id: 5,
