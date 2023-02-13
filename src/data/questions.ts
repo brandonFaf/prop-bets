@@ -35,6 +35,7 @@ const questions: Question[] = [
       { letter: 'b', value: 'Coors Lite' },
       { letter: 'c', value: 'Miller Lite' },
     ],
+    final:'b'
   },
   {
     id: 3,
