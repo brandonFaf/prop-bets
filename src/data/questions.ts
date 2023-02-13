@@ -84,6 +84,7 @@ const questions: Question[] = [
       { letter: 'a', value: 'Yes' },
       { letter: 'b', value: 'No' },
     ],
+    
   },
   {
     id: 8,
@@ -96,6 +97,7 @@ const questions: Question[] = [
       { letter: 'e', value: 'We found love' },
       { letter: 'f', value: 'Other' },
     ],
+    final:'a'
   },
   {
     id: 9,
