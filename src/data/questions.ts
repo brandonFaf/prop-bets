@@ -74,6 +74,11 @@ const questions: Question[] = [
       { letter: 'C', value: 'Defensive Offsides' },
       { letter: 'D', value: 'Defensive Pass Interference/Holding' },
       { letter: 'E', value: 'Other' },
+      {
+        letter: 'F',
+        value:
+          'Offensive offsides on Chiefs #19 Kadarius Toney on a play that would have gone for a touchdown',
+      },
     ],
     final: '',
   },
