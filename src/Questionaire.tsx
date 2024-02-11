@@ -28,11 +28,10 @@ const Questionaire = () => {
     } else if (
       state.filter((x) => x).length !== questions.filter((x) => !x.final).length
     ) {
-      console.log(state.filter((x) => x).length, '!=', questions.filter((x) => !x.final).length)
       setError('Please answer all the questions');
     } else {
       setError('');
-      const ref = await db.collection('responses').doc(name.toLowerCase());
+      const ref = await db.collection('responses58').doc(name.toLowerCase());
       const doc = ref.get();
       const responses = state.map((x) => (x ? x : { value: '' }));
       if ((await doc).exists) {
@@ -48,7 +47,7 @@ const Questionaire = () => {
             setError('Error Saving');
             throw new Error();
           });
-        localStorage.setItem('name57', name);
+        localStorage.setItem('name58', name);
         setShowThanks(true);
       }
     }
