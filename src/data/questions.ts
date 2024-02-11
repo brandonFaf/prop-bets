@@ -108,7 +108,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Make' },
       { letter: 'B', value: 'Miss' },
     ],
-    final: '',
+    final: 'B',
   },
   {
     id: 10,
