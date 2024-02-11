@@ -16,7 +16,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Over 89.5 seconds' },
       { letter: 'B', value: 'Under 89.5 seconds' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 1,
