@@ -81,7 +81,7 @@ const questions: Question[] = [
           'Offensive offsides on Chiefs #19 Kadarius Toney on a play that would have gone for a touchdown',
       },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 7,
