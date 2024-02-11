@@ -25,7 +25,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Heads' },
       { letter: 'B', value: 'Tails' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 2,
@@ -57,12 +57,13 @@ const questions: Question[] = [
   },
   {
     id: 5,
-    text: 'Will Taylor Swift be wearing the number 87 on her outfit?',
+    text:
+      'Will Taylor Swift be wearing the number 87 on her outfit? (Its on her necklace)',
     answers: [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 6,
