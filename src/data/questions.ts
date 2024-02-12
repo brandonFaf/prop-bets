@@ -99,7 +99,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Lionel Messi (Michelob Ultra commercial)' },
       { letter: 'B', value: 'David Beckham (Uber Eats commercial)' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 9,
