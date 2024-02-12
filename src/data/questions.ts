@@ -186,7 +186,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Chiefs' },
       { letter: 'B', value: '49ers' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 18,
@@ -204,7 +204,7 @@ const questions: Question[] = [
       { letter: 'A', value: '49ers' },
       { letter: 'B', value: 'Chiefs' },
     ],
-    final: '',
+    final: 'B',
   },
   {
     id: 20,
@@ -215,14 +215,14 @@ const questions: Question[] = [
       { letter: 'C', value: 'Yellow/Green/Lime' },
       { letter: 'D', value: 'Clear/None' },
     ],
-    final: '',
+    final: 'D',
   },
   {
     id: 21,
     text:
       'TIEBREAKER: Total points scored in the game (Closest without going over)',
     answers: [],
-    final: '',
+    final: '47',
   },
 ];
 export default questions;
