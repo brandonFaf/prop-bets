@@ -34,7 +34,7 @@ const questions: Question[] = [
       { letter: 'A', value: '49ers' },
       { letter: 'B', value: 'Chiefs' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Over 23.5' },
       { letter: 'B', value: 'Under 23.5' },
     ],
-    final: '',
+    final: 'B',
   },
   {
     id: 4,
