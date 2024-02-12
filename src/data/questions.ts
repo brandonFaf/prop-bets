@@ -132,7 +132,7 @@ const questions: Question[] = [
       { letter: 'D', value: 'DJ Got Us Falling in Love' },
       { letter: 'E', value: 'Any other' },
     ],
-    final: '',
+    final: 'E',
   },
   {
     id: 12,
