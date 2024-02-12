@@ -25,9 +25,9 @@ const Leaderboard = ({ name }: { name: string }) => {
         }
         return { ...data, score };
       });
-      setResults(allResults);
-      // const winner = allResults.find((x) => x.name == 'Tim Miller');
-      // setResults([winner!, ...allResults.filter((x) => x != winner)]);
+      // setResults(allResults);
+      const winner = allResults.find((x) => x.name == 'Sidee Sesay');
+      setResults([winner!, ...allResults.filter((x) => x != winner)]);
     };
     getData();
   }, [name]);
@@ -110,7 +110,7 @@ const Leaderboard = ({ name }: { name: string }) => {
               prev = score;
               return (
                 <tr key={lName}>
-                  <td>{rank}</td>
+                  <td>{score == 14 ? '⭐️' : rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>
                   <td>{responses[21]?.value}</td>
