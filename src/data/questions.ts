@@ -150,7 +150,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
-    final: '',
+    final: 'A',
   },
   {
     id: 14,
