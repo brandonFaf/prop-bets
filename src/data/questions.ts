@@ -215,7 +215,7 @@ const questions: Question[] = [
       { letter: 'C', value: 'Yellow/Green/Lime' },
       { letter: 'D', value: 'Clear/None' },
     ],
-    final: 'D',
+    final: 'A',
   },
   {
     id: 21,
