@@ -113,13 +113,14 @@ const questions: Question[] = [
   },
   {
     id: 10,
-    text: 'Who is Addison Rae coaching in the Nerds commercial?',
+    text:
+      'Who is Addison Rae coaching in the Nerds commercial? (note: Answer was none of the options)',
     answers: [
       { letter: 'A', value: 'Athlete' },
       { letter: 'B', value: 'Actor/Actress' },
       { letter: 'C', value: 'Musician' },
     ],
-    final: '',
+    final: 'D',
   },
   {
     id: 11,
