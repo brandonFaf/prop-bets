@@ -141,7 +141,7 @@ const questions: Question[] = [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
-    final: '',
+    final: 'B',
   },
   {
     id: 13,
@@ -154,12 +154,12 @@ const questions: Question[] = [
   },
   {
     id: 14,
-    text: 'Usher outfit changes',
+    text: 'Usher outfit changes (note: taking off a shirt is not a change)',
     answers: [
       { letter: 'A', value: 'Over 1.5' },
       { letter: 'B', value: 'Under 1.5' },
     ],
-    final: '',
+    final: 'B',
   },
   {
     id: 15,
