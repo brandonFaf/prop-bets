@@ -12,7 +12,7 @@ const ComingSoon = () => {
         flexDirection: 'column',
       }}
     >
-      <h1>Superbowl LVIII Prop Bets</h1>
+      <h1>Superbowl LIX Prop Bets</h1>
       <h2>🎉Coming Soon!🎉</h2>
       <p style={{ marginTop: 24 }}>
         Check back on Super Bowl Sunday to make your choices
