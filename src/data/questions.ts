@@ -2,227 +2,186 @@ export interface Answer {
   letter: string;
   value: string;
 }
+
 export interface Question {
   id: number;
   text: string;
   answers: Answer[];
   final?: string;
 }
+
 const questions: Question[] = [
   {
     id: 0,
-    text: 'How long will the National Anthem last?',
+    text: 'Jon Batiste sings national anthem in:',
     answers: [
-      { letter: 'A', value: 'Over 89.5 seconds' },
-      { letter: 'B', value: 'Under 89.5 seconds' },
+      { letter: 'A', value: 'Over 120.5 seconds' },
+      { letter: 'B', value: 'Under 120.5 seconds' },
     ],
-    final: 'A',
+    final: '',
   },
   {
     id: 1,
-    text: 'Coin toss will be',
+    text: 'Will Jon Batiste perform national anthem with an instrument?',
+    answers: [
+      { letter: 'A', value: 'Yes' },
+      { letter: 'B', value: 'No' },
+    ],
+  },
+  {
+    id: 2,
+    text: 'Coin Toss',
     answers: [
       { letter: 'A', value: 'Heads' },
       { letter: 'B', value: 'Tails' },
     ],
-    final: 'A',
-  },
-  {
-    id: 2,
-    text: 'Which team will score first?',
-    answers: [
-      { letter: 'A', value: '49ers' },
-      { letter: 'B', value: 'Chiefs' },
-    ],
-    final: 'A',
   },
   {
     id: 3,
-    text:
-      'Will the jersey number of the player who scores the first touchdown be:',
+    text: "Tom Brady's tie color",
     answers: [
-      { letter: 'A', value: 'Over 23.5' },
-      { letter: 'B', value: 'Under 23.5' },
+      { letter: 'A', value: 'Blue' },
+      { letter: 'B', value: 'Gray' },
+      { letter: 'C', value: 'Any other color' },
+      { letter: 'D', value: 'No tie' },
     ],
-    final: 'B',
   },
   {
     id: 4,
-    text: 'Will a quarterback throw an interception?',
+    text: 'Who will win the game',
     answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
+      { letter: 'A', value: 'Chiefs' },
+      { letter: 'B', value: 'Eagles' },
     ],
-    final: 'A',
   },
   {
     id: 5,
-    text:
-      'Will Taylor Swift be wearing the number 87 on her outfit? (Its on her necklace)',
+    text: 'Will both teams convert a 4th down?',
     answers: [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
-    final: 'A',
   },
   {
     id: 6,
-    text:
-      'Which penalty will be the first called of the game? (Accepted or declined penalties count)',
+    text: 'What will be the jersey number of the first touchdown scorer?',
     answers: [
-      { letter: 'A', value: 'False Start' },
-      { letter: 'B', value: 'Offensive Holding' },
-      { letter: 'C', value: 'Defensive Offsides' },
-      { letter: 'D', value: 'Defensive Pass Interference/Holding' },
-      { letter: 'E', value: 'Other' },
-      {
-        letter: 'F',
-        value:
-          'Offensive offsides on Chiefs #19 Kadarius Toney on a play that would have gone for a touchdown',
-      },
+      { letter: 'A', value: 'Under 15.5' },
+      { letter: 'B', value: 'Over 15.5' },
     ],
-    final: 'A',
   },
   {
     id: 7,
-    text: 'Will both teams have the lead during some point of the first half?',
+    text: "Kendrick Lamar's opening Song of the halftime show:",
     answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
+      { letter: 'A', value: 'TV Off' },
+      { letter: 'B', value: 'Not Like Us' },
+      { letter: 'C', value: 'All the Stars' },
+      { letter: 'D', value: 'Humble' },
+      { letter: 'E', value: 'Any other song' },
     ],
-    final: 'B',
   },
   {
     id: 8,
-    text: 'Which soccer star will appear in a commercial first?',
+    text:
+      'How many celebrity guests will join Kendrick Lamar during the halftime show?',
     answers: [
-      { letter: 'A', value: 'Lionel Messi (Michelob Ultra commercial)' },
-      { letter: 'B', value: 'David Beckham (Uber Eats commercial)' },
+      { letter: 'A', value: 'Under 3.5' },
+      { letter: 'B', value: 'Over 3.5' },
     ],
-    final: 'A',
   },
   {
     id: 9,
-    text:
-      "What will be the result of Rob Gronkowski's Kick of Destiny 2? (FanDuel commercial)",
+    text: 'Total Players With a Pass Attempt',
     answers: [
-      { letter: 'A', value: 'Make' },
-      { letter: 'B', value: 'Miss' },
+      { letter: 'A', value: 'Under 2.5' },
+      { letter: 'B', value: 'Over 2.5' },
     ],
-    final: 'B',
   },
   {
     id: 10,
-    text:
-      'Who is Addison Rae coaching in the Nerds commercial? (note: Answer was none of the options)',
+    text: 'How many rushing yards will Saquon Barkley have?',
     answers: [
-      { letter: 'A', value: 'Athlete' },
-      { letter: 'B', value: 'Actor/Actress' },
-      { letter: 'C', value: 'Musician' },
+      { letter: 'A', value: 'Under 125' },
+      { letter: 'B', value: 'Over 125' },
     ],
-    final: 'D',
   },
   {
     id: 11,
-    text: "Usher's First Song",
+    text: "How far will Mahomes' first touchdown pass be?",
     answers: [
-      { letter: 'A', value: 'My Way' },
-      { letter: 'B', value: 'Yeah!' },
-      { letter: 'C', value: 'OMG' },
-      { letter: 'D', value: 'DJ Got Us Falling in Love' },
-      { letter: 'E', value: 'Any other' },
+      { letter: 'A', value: 'Under 9.5 yards' },
+      { letter: 'B', value: 'Over 9.5 yards' },
     ],
-    final: 'E',
   },
   {
     id: 12,
-    text: 'Usher wears sunglasses at any point during performance',
+    text: 'Which team will have the longest made field goal?',
     answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
+      { letter: 'A', value: 'Chiefs' },
+      { letter: 'B', value: 'Eagles' },
     ],
-    final: 'B',
   },
   {
     id: 13,
-    text: 'Will Lil Jon be a guest appearance during the halftime show?',
+    text: 'Will any player score more than two touchdowns?',
     answers: [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
-    final: 'A',
   },
   {
     id: 14,
-    text: 'Usher outfit changes (note: taking off a shirt is not a change)',
+    text: 'Who will lead at the end of the third quarter?',
     answers: [
-      { letter: 'A', value: 'Over 1.5' },
-      { letter: 'B', value: 'Under 1.5' },
+      { letter: 'A', value: 'Chiefs' },
+      { letter: 'B', value: 'Eagles' },
+      { letter: 'C', value: 'Tie' },
     ],
-    final: 'B',
   },
   {
     id: 15,
-    text: 'Which team will score more points in the third quarter?',
+    text: 'What will be the largest lead of the game?',
     answers: [
-      { letter: 'A', value: '49ers' },
-      { letter: 'B', value: 'Chiefs' },
+      { letter: 'A', value: 'Under 13.5' },
+      { letter: 'B', value: 'Over 13.5' },
     ],
-    final: 'B',
   },
   {
     id: 16,
-    text: 'Will there be a field goal scored in the fourth quarter?',
+    text:
+      'What will the last score of the game be? (PAT and 2 pt conversion do not count)',
     answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
+      { letter: 'A', value: 'Touchdown' },
+      { letter: 'B', value: 'Field Goal' },
+      { letter: 'C', value: 'Safety' },
     ],
-    final: 'A',
   },
   {
     id: 17,
-    text: 'Which team will score last?',
+    text: 'Total combined points scored in the game:',
     answers: [
-      { letter: 'A', value: 'Chiefs' },
-      { letter: 'B', value: '49ers' },
+      { letter: 'A', value: 'Under 49.5' },
+      { letter: 'B', value: 'Over 49.5' },
     ],
-    final: 'A',
   },
   {
     id: 18,
-    text: 'Will the game go into overtime?',
+    text: 'What color liquid will be dumped on the winning coach?',
     answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
+      { letter: 'A', value: 'Orange' },
+      { letter: 'B', value: 'Purple' },
+      { letter: 'C', value: 'Yellow' },
+      { letter: 'D', value: 'Clear' },
+      { letter: 'E', value: 'Any other color' },
     ],
-    final: 'A',
   },
   {
     id: 19,
-    text: 'Who will win The Big Game?',
-    answers: [
-      { letter: 'A', value: '49ers' },
-      { letter: 'B', value: 'Chiefs' },
-    ],
-    final: 'B',
-  },
-  {
-    id: 20,
-    text: 'Color of liquid poured on the winning coach',
-    answers: [
-      { letter: 'A', value: 'Purple' },
-      { letter: 'B', value: 'Orange' },
-      { letter: 'C', value: 'Yellow/Green/Lime' },
-      { letter: 'D', value: 'Clear/None' },
-    ],
-    final: 'A',
-  },
-  {
-    id: 21,
     text:
-      'TIEBREAKER: Total points scored in the game (Closest without going over)',
+      'TIEBREAKER: Total points scored by the winning team (closest without going over)',
     answers: [],
-    final: '47',
   },
 ];
+
 export default questions;

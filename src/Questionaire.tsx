@@ -18,8 +18,13 @@ const Questionaire = () => {
       if (n) {
         setName(n);
       }
+    } else {
+      const savedName = localStorage.getItem('name58');
+      if (savedName) {
+        setName(savedName);
+      }
     }
-  }, [window.location]);
+  }, []);
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     console.log(state);
@@ -31,7 +36,7 @@ const Questionaire = () => {
       setError('Please answer all the questions');
     } else {
       setError('');
-      const ref = await db.collection('responses58').doc(name.toLowerCase());
+      const ref = await db.collection('responses59').doc(name.toLowerCase());
       const doc = ref.get();
       const responses = state.map((x) => (x ? x : { value: '' }));
       if ((await doc).exists) {
@@ -47,7 +52,7 @@ const Questionaire = () => {
             setError('Error Saving');
             throw new Error();
           });
-        localStorage.setItem('name58', name);
+        localStorage.setItem('name59', name);
         setShowThanks(true);
       }
     }

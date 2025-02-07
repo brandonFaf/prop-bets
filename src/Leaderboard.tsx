@@ -12,7 +12,7 @@ const Leaderboard = ({ name }: { name: string }) => {
   const [results, setResults] = useState<userData[]>([]);
   useEffect(() => {
     const getData = async () => {
-      const docRef = await db.collection('responses58').get();
+      const docRef = await db.collection('responses59').get();
 
       const allResults = docRef.docs.map((d) => {
         const data = d.data() as userData;
@@ -25,9 +25,9 @@ const Leaderboard = ({ name }: { name: string }) => {
         }
         return { ...data, score };
       });
-      // setResults(allResults);
-      const winner = allResults.find((x) => x.name == 'Sidee Sesay');
-      setResults([winner!, ...allResults.filter((x) => x != winner)]);
+      setResults(allResults);
+      // const winner = allResults.find((x) => x.name == 'Sidee Sesay');
+      // setResults([winner!, ...allResults.filter((x) => x != winner)]);
     };
     getData();
   }, [name]);
@@ -40,7 +40,7 @@ const Leaderboard = ({ name }: { name: string }) => {
           <ol>
             {questions.map((question, i) => {
               let correct;
-              if (question.final == '') {
+              if (!question.final || question.final == '') {
                 correct = 'white';
               } else {
                 correct = question.final == answers[i]?.value ? 'green' : 'red';
@@ -110,7 +110,7 @@ const Leaderboard = ({ name }: { name: string }) => {
               prev = score;
               return (
                 <tr key={lName}>
-                  <td>{score == 14 ? '⭐️' : rank}</td>
+                  <td>{rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>
                   <td>{responses[21]?.value}</td>
