@@ -11,46 +11,80 @@ interface userData {
 
 const Leaderboard = ({ name }: { name: string }) => {
   const [answers, setAnswers] = useState<UserResponse[]>([]);
-  console.log('answers:', answers);
   const [results, setResults] = useState<userData[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [responses, setResponses] = useState<userData[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
-      // Fetch questions with answers from Firebase
-      const questionsSnapshot = await db
+    let unsubscribeQuestions: () => void;
+    let unsubscribeResponses: () => void;
+
+    const setupListeners = async () => {
+      // Set up realtime listener for questions
+      unsubscribeQuestions = db
         .collection('questions')
         .doc('current')
-        .get();
-      const currentQuestions = questionsSnapshot.exists
-        ? questionsSnapshot.data()?.questions
-        : [];
-      setQuestions(currentQuestions);
+        .onSnapshot((snapshot) => {
+          if (snapshot.exists) {
+            const currentQuestions = snapshot.data()?.questions || [];
+            setQuestions(currentQuestions);
+          }
+        });
 
-      // Fetch responses
-      const docRef = await db.collection('responses59').get();
+      // Set up realtime listener for responses
+      unsubscribeResponses = db
+        .collection('responses59')
+        .onSnapshot((snapshot) => {
+          const allResponses: userData[] = [];
+          snapshot.forEach((doc) => {
+            const data = doc.data() as userData;
 
-      const allResults = docRef.docs.map((d) => {
-        const data = d.data() as userData;
-        const score = data.responses.reduce(
-          (acc, { value }, i) =>
-            value === currentQuestions[i].final ? acc + 1 : acc,
-          0,
-        );
+            // Normalize names for comparison
+            const normalizedDataName = data.name.toLowerCase().trim();
+            const normalizedName = name.toLowerCase().trim();
 
-        // Normalize both names for comparison
-        const normalizedDataName = data.name.toLowerCase().trim();
-        const normalizedName = name.toLowerCase().trim();
-
-        if (normalizedDataName === normalizedName) {
-          setAnswers(data.responses);
-        }
-        return { ...data, score };
-      });
-      setResults(allResults);
+            if (normalizedDataName === normalizedName) {
+              setAnswers(data.responses);
+            }
+            allResponses.push(data);
+          });
+          setResponses(allResponses);
+        });
     };
-    getData();
-  }, [name]);
+
+    setupListeners();
+
+    // Cleanup function
+    return () => {
+      if (unsubscribeQuestions) unsubscribeQuestions();
+      if (unsubscribeResponses) unsubscribeResponses();
+    };
+  }, [name]); // Only depend on name
+
+  // New useEffect to calculate scores when either questions or responses update
+  useEffect(() => {
+    if (questions.length > 0 && responses.length > 0) {
+      calculateAndUpdateScores(questions, responses);
+    }
+  }, [questions, responses]);
+
+  const calculateAndUpdateScores = (
+    currentQuestions: Question[],
+    responsesList: userData[],
+  ) => {
+    const updatedResults = responsesList.map((data) => ({
+      ...data,
+      score: data.responses.reduce((acc, { value }, i) => {
+        const question = currentQuestions[i];
+        if (question && question.final && value === question.final) {
+          return acc + 1;
+        }
+        return acc;
+      }, 0),
+    }));
+
+    setResults(updatedResults);
+  };
 
   let prev = -1;
 
