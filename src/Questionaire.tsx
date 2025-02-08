@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import questions from './data/questions';
 import Question from './Question';
 import { db } from './data/firebaseConfig';
+import { Question as QuestionData } from './data/questions';
+
 export interface UserResponse {
   value: string;
 }
+
 const Questionaire = () => {
   const [state, setState] = useState<UserResponse[]>([]);
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<string>();
   const [showThanks, setShowThanks] = useState<boolean>(false);
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
+
   useEffect(() => {
     if (window.location.search.indexOf('name') >= 0) {
       const url = new URL(window.location.toString());
@@ -25,6 +29,18 @@ const Questionaire = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const loadQuestions = async () => {
+      const snapshot = await db.collection('questions').doc('current').get();
+      if (snapshot.exists) {
+        setQuestions(snapshot.data()?.questions || []);
+      }
+    };
+
+    loadQuestions();
+  }, []);
+
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     console.log(state);
