@@ -97,7 +97,7 @@ const Leaderboard = ({ name }: { name: string }) => {
             {questions.map((question, i) => {
               let correct;
               if (!question.final || question.final === '') {
-                correct = 'white';
+                correct = 'var(--text-color)';
               } else {
                 correct =
                   question.final === answers[i]?.value ? 'green' : 'red';
@@ -122,19 +122,22 @@ const Leaderboard = ({ name }: { name: string }) => {
                               answers[i]?.value === a.letter
                                 ? 'bold'
                                 : 'normal',
-                            textDecoration:
-                              answers[i]?.value === a.letter
-                                ? 'underline'
-                                : 'none',
                             color: question.final
                               ? question.final === a.letter
                                 ? 'green'
                                 : answers[i]?.value === a.letter
-                                ? 'white'
-                                : 'white'
-                              : 'white',
+                                ? 'red'
+                                : 'var(--text-color)'
+                              : 'var(--text-color)',
                           }}
                         >
+                          {question.final
+                            ? answers[i]?.value === a.letter
+                              ? question.final === a.letter
+                                ? '✅'
+                                : '❌'
+                              : undefined
+                            : undefined}{' '}
                           {a.letter}. {a.value}
                         </span>
                       </div>
@@ -167,8 +170,13 @@ const Leaderboard = ({ name }: { name: string }) => {
             .map(({ name: lName, score = 0, responses }, i) => {
               const rank = prev === -1 || prev !== score ? `${i + 1}.` : '';
               prev = score;
+              const isCurrentUser =
+                lName.toLowerCase().trim() === name.toLowerCase().trim();
               return (
-                <tr key={lName}>
+                <tr
+                  key={lName}
+                  style={{ fontWeight: isCurrentUser ? 'bold' : 'normal' }}
+                >
                   <td>{rank}</td>
                   <td>{lName}</td>
                   <td>{score}</td>

@@ -13,6 +13,20 @@
       content="Just for fun, super simple prop bets for Superbowl LIX"
     />
     <title>Superbowl LIX Prop Bets</title>
+    <style>
+      :root {
+        color-scheme: light dark; /* Enables system color scheme awareness */
+
+        /* Light mode */
+        --text-color: #000000;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #ffffff;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
