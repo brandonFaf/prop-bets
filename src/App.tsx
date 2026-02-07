@@ -7,11 +7,12 @@ import Admin from './Admin';
 import { initializeQuestions } from './scripts/initializeQuestions';
 
 function App() {
-  let name = localStorage.getItem('name59');
+  let name = localStorage.getItem('name60');
+  console.log('name:', name);
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
     if (window.location.search.indexOf('clear') >= 0) {
-      localStorage.removeItem('name59');
+      localStorage.removeItem('name60');
       name = null;
       window.location.href = window.location.origin;
     }
@@ -26,7 +27,7 @@ function App() {
   ) : (
     <div className="App">
       <header className="App-header">
-        <h1>Superbowl LIX Prop Bets</h1>
+        <h1>Superbowl LX Prop Bets</h1>
       </header>
       {name ? <Leaderboard name={name} /> : <Questionaire />}
     </div>

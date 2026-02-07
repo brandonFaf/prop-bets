@@ -33,7 +33,7 @@ const Leaderboard = ({ name }: { name: string }) => {
 
       // Set up realtime listener for responses
       unsubscribeResponses = db
-        .collection('responses59')
+        .collection('responses60')
         .onSnapshot((snapshot) => {
           const allResponses: userData[] = [];
           snapshot.forEach((doc) => {

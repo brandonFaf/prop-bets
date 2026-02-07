@@ -13,50 +13,49 @@ export interface Question {
 const questions: Question[] = [
   {
     id: 0,
-    text: 'Jon Batiste sings national anthem in:',
+    text: 'Charlie Puth sings national anthem in:',
     answers: [
-      { letter: 'A', value: 'Over 120.5 seconds' },
-      { letter: 'B', value: 'Under 120.5 seconds' },
+      { letter: 'A', value: 'Under 120.5 seconds' },
+      { letter: 'B', value: 'Over 120.5 seconds' },
     ],
     final: '',
   },
   {
     id: 1,
-    text: 'Will Jon Batiste perform national anthem with an instrument?',
-    answers: [
-      { letter: 'A', value: 'Yes' },
-      { letter: 'B', value: 'No' },
-    ],
-  },
-  {
-    id: 2,
-    text: 'Coin Toss',
+    text: 'Coin Toss:',
     answers: [
       { letter: 'A', value: 'Heads' },
       { letter: 'B', value: 'Tails' },
     ],
   },
   {
-    id: 3,
-    text: "Tom Brady's tie color",
+    id: 2,
+    text: 'Total points scored in the first half:',
     answers: [
-      { letter: 'A', value: 'Blue' },
-      { letter: 'B', value: 'Gray' },
-      { letter: 'C', value: 'Any other color' },
-      { letter: 'D', value: 'No tie' },
+      { letter: 'A', value: 'Over 22.5' },
+      { letter: 'B', value: 'Under 22.5' },
+    ],
+  },
+  {
+    id: 3,
+    text: 'Will the first score of the game be:',
+    answers: [
+      { letter: 'A', value: 'Touchdown' },
+      { letter: 'B', value: 'Field Goal' },
+      { letter: 'C', value: 'Other' },
     ],
   },
   {
     id: 4,
-    text: 'Who will win the game',
+    text: 'Longest punt return will be:',
     answers: [
-      { letter: 'A', value: 'Chiefs' },
-      { letter: 'B', value: 'Eagles' },
+      { letter: 'A', value: 'Over 18.5 yards' },
+      { letter: 'B', value: 'Under 18.5 yards' },
     ],
   },
   {
     id: 5,
-    text: 'Will both teams convert a 4th down?',
+    text: 'Will either starting QB score a rushing touchdown?',
     answers: [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
@@ -64,116 +63,116 @@ const questions: Question[] = [
   },
   {
     id: 6,
-    text: 'What will be the jersey number of the first touchdown scorer?',
+    text: 'Color of Gatorade poured on winning coach:',
     answers: [
-      { letter: 'A', value: 'Under 15.5' },
-      { letter: 'B', value: 'Over 15.5' },
+      { letter: 'A', value: 'Orange' },
+      { letter: 'B', value: 'Blue' },
+      { letter: 'C', value: 'Yellow/Lime Green' },
+      { letter: 'D', value: 'Clear/Water' },
+      { letter: 'E', value: 'Other' },
     ],
   },
   {
     id: 7,
-    text: "Kendrick Lamar's opening Song of the halftime show:",
-    answers: [
-      { letter: 'A', value: 'TV Off' },
-      { letter: 'B', value: 'Not Like Us' },
-      { letter: 'C', value: 'All the Stars' },
-      { letter: 'D', value: 'Humble' },
-      { letter: 'E', value: 'Any other song' },
-    ],
-  },
-  {
-    id: 8,
-    text:
-      'How many celebrity guests will join Kendrick Lamar during the halftime show?',
-    answers: [
-      { letter: 'A', value: 'Under 3.5' },
-      { letter: 'B', value: 'Over 3.5' },
-    ],
-  },
-  {
-    id: 9,
-    text: 'Total Players With a Pass Attempt',
-    answers: [
-      { letter: 'A', value: 'Under 2.5' },
-      { letter: 'B', value: 'Over 2.5' },
-    ],
-  },
-  {
-    id: 10,
-    text: 'How many rushing yards will Saquon Barkley have?',
-    answers: [
-      { letter: 'A', value: 'Under 125' },
-      { letter: 'B', value: 'Over 125' },
-    ],
-  },
-  {
-    id: 11,
-    text: "How far will Mahomes' first touchdown pass be?",
-    answers: [
-      { letter: 'A', value: 'Under 9.5 yards' },
-      { letter: 'B', value: 'Over 9.5 yards' },
-    ],
-  },
-  {
-    id: 12,
-    text: 'Which team will have the longest made field goal?',
-    answers: [
-      { letter: 'A', value: 'Chiefs' },
-      { letter: 'B', value: 'Eagles' },
-    ],
-  },
-  {
-    id: 13,
-    text: 'Will any player score more than two touchdowns?',
+    text: 'Will there be a two-point conversion?',
     answers: [
       { letter: 'A', value: 'Yes' },
       { letter: 'B', value: 'No' },
     ],
   },
   {
-    id: 14,
-    text: 'Who will lead at the end of the third quarter?',
+    id: 8,
+    text: 'Sam Darnold passing yards in the first quarter:',
     answers: [
-      { letter: 'A', value: 'Chiefs' },
-      { letter: 'B', value: 'Eagles' },
-      { letter: 'C', value: 'Tie' },
+      { letter: 'A', value: 'Over 51.5' },
+      { letter: 'B', value: 'Under 51.5' },
+    ],
+  },
+  {
+    id: 9,
+    text:
+      'Will there be a missed field goal attempt during the second quarter:',
+    answers: [
+      { letter: 'A', value: 'Yes' },
+      { letter: 'B', value: 'No' },
+    ],
+  },
+  {
+    id: 10,
+    text: 'Halftime show guest performer will be:',
+    answers: [
+      { letter: 'A', value: 'Lady Gaga' },
+      { letter: 'B', value: 'Cardi B' },
+      { letter: 'C', value: 'Ricky Martin' },
+      { letter: 'D', value: 'None of these' },
+    ],
+  },
+  {
+    id: 11,
+    text: 'Who will lead at the end of the third quarter:',
+    answers: [
+      { letter: 'A', value: 'Patriots' },
+      { letter: 'B', value: 'Seahawks' },
+    ],
+  },
+  {
+    id: 12,
+    text: 'Who will win the game?',
+    answers: [
+      { letter: 'A', value: 'Patriots' },
+      { letter: 'B', value: 'Seahawks' },
+    ],
+  },
+  {
+    id: 13,
+    text:
+      'What will be the first commercial played after the game has started?',
+    answers: [
+      { letter: 'A', value: 'Movie/TV show trailer' },
+      { letter: 'B', value: 'Beer/Alcohol Company' },
+      { letter: 'C', value: 'Food/Restaurant Company' },
+      { letter: 'D', value: 'Technology Company' },
+      { letter: 'E', value: 'Other' },
+    ],
+  },
+  {
+    id: 14,
+    text: 'Jersey number of the second touchdown scorer:',
+    answers: [
+      { letter: 'A', value: 'Over 10.5' },
+      { letter: 'B', value: 'Under 10.5' },
     ],
   },
   {
     id: 15,
-    text: 'What will be the largest lead of the game?',
+    text: 'Will any non-QB throw a pass?',
     answers: [
-      { letter: 'A', value: 'Under 13.5' },
-      { letter: 'B', value: 'Over 13.5' },
+      { letter: 'A', value: 'Yes' },
+      { letter: 'B', value: 'No' },
     ],
   },
   {
     id: 16,
-    text:
-      'What will the last score of the game be? (PAT and 2 pt conversion do not count)',
+    text: 'Will there be a lead change at any point in the 4th quarter?',
     answers: [
-      { letter: 'A', value: 'Touchdown' },
-      { letter: 'B', value: 'Field Goal' },
-      { letter: 'C', value: 'Safety' },
+      { letter: 'A', value: 'Yes' },
+      { letter: 'B', value: 'No' },
     ],
   },
   {
     id: 17,
-    text: 'Total combined points scored in the game:',
+    text: 'Number of sacks in the second quarter:',
     answers: [
-      { letter: 'A', value: 'Under 49.5' },
-      { letter: 'B', value: 'Over 49.5' },
+      { letter: 'A', value: 'Over 1.5' },
+      { letter: 'B', value: 'Under 1.5' },
     ],
   },
   {
     id: 18,
-    text: 'What color liquid will be dumped on the winning coach?',
+    text: 'Which brand will have their commercial air first',
     answers: [
-      { letter: 'A', value: 'Orange' },
-      { letter: 'B', value: 'Purple' },
-      { letter: 'C', value: 'Yellow' },
-      { letter: 'D', value: 'Clear' },
-      { letter: 'E', value: 'Any other color' },
+      { letter: 'A', value: 'Uber Eats' },
+      { letter: 'B', value: 'Dove' },
     ],
   },
   {
