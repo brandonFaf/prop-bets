@@ -163,11 +163,29 @@ const Bingo = () => {
     });
   }, [cardDoc, hasBingo, game.turn]);
 
-  const winners = useMemo(() => {
+  const leaderboardRows = useMemo(() => {
+    const occurred = new Set(game.occurred);
     return allCards
-      .filter((card) => card.bingoTurn)
-      .sort((a, b) => (a.bingoTurn ?? 0) - (b.bingoTurn ?? 0));
-  }, [allCards]);
+      .map((card) => {
+        const markedCount = card.card.reduce((acc, value, index) => {
+          if (index === FREE_INDEX) return acc + 1;
+          return occurred.has(value) ? acc + 1 : acc;
+        }, 0);
+        return {
+          name: card.name,
+          markedCount,
+          bingoTurn: card.bingoTurn,
+        };
+      })
+      .sort((a, b) => {
+        if (a.bingoTurn && b.bingoTurn) {
+          return a.bingoTurn - b.bingoTurn;
+        }
+        if (a.bingoTurn) return -1;
+        if (b.bingoTurn) return 1;
+        return b.markedCount - a.markedCount;
+      });
+  }, [allCards, game.occurred]);
 
   return (
     <div className="bingo-page">
@@ -237,17 +255,30 @@ const Bingo = () => {
       )}
 
       <section className="bingo-winners">
-        <h2>First bingos</h2>
-        {winners.length === 0 ? (
-          <p>No bingos yet. The board is still open.</p>
+        <h2>Bingo leaderboard</h2>
+        {leaderboardRows.length === 0 ? (
+          <p>No bingo cards yet.</p>
         ) : (
-          <ol>
-            {winners.map((winner) => (
-              <li key={winner.name}>
-                {winner.name} — turn {winner.bingoTurn}
-              </li>
-            ))}
-          </ol>
+          <table className="bingo-leaderboard">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Marked</th>
+                <th>First Bingo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {leaderboardRows.map((row) => (
+                <tr key={row.name}>
+                  <td>{row.name}</td>
+                  <td>
+                    {row.markedCount}/{GRID_SIZE * GRID_SIZE}
+                  </td>
+                  <td>{row.bingoTurn ? `Turn ${row.bingoTurn}` : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
       </section>
     </div>

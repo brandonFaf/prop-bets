@@ -217,6 +217,24 @@
   gap: 6px;
 }
 
+.bingo-page .bingo-leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.bingo-page .bingo-leaderboard th,
+.bingo-page .bingo-leaderboard td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.bingo-page .bingo-leaderboard th {
+  font-weight: 700;
+}
+
 @media (max-width: 720px) {
   .bingo-page .bingo-header {
     flex-direction: column;
