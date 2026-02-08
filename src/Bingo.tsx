@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import firebase from 'firebase';
 import { db } from './data/firebaseConfig';
+import { bingoOptions } from './data/bingoOptions';
 
 const LOCAL_STORAGE_KEY = 'name60';
 const GAME_DOC_ID = 'current';
@@ -173,7 +174,9 @@ const Bingo = () => {
       <header className="bingo-header">
         <div>
           <p className="bingo-eyebrow">Super Bowl Bingo</p>
-          <h1>Prop Bets Bingo</h1>
+          <h1>
+            Prop Bets Bingo <span className="bingo-beta">Beta</span>
+          </h1>
         </div>
         <div className="bingo-actions">
           <a href="/" className="bingo-link">

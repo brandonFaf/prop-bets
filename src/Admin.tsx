@@ -112,7 +112,21 @@ const Admin = () => {
           occurred: [],
           eventLog: [],
         };
-        if (data.occurred.includes(option)) return;
+        if (data.occurred.includes(option)) {
+          const updatedOccurred = data.occurred.filter(
+            (entry) => entry !== option,
+          );
+          const updatedLog = (data.eventLog ?? []).filter(
+            (entry) => entry.option !== option,
+          );
+          const nextTurn = Math.max(0, (data.turn ?? 0) - 1);
+          tx.update(gameRef, {
+            turn: nextTurn,
+            occurred: updatedOccurred,
+            eventLog: updatedLog,
+          });
+          return;
+        }
         const nextTurn = (data.turn ?? 0) + 1;
         if (!snap.exists) {
           tx.set(gameRef, {
@@ -157,7 +171,9 @@ const Admin = () => {
           </div>
         </div>
         <div className="bingo-options">
-          {bingoOptions.map((option) => (
+          {[...bingoOptions]
+            .sort((a, b) => a.localeCompare(b))
+            .map((option) => (
             <button
               key={option}
               type="button"
@@ -165,7 +181,7 @@ const Admin = () => {
                 occurredSet.has(option) ? 'done' : ''
               }`}
               onClick={() => markEvent(option)}
-              disabled={occurredSet.has(option) || isSaving}
+              disabled={isSaving}
             >
               <span>{option}</span>
               {occurredSet.has(option) ? <strong>Called</strong> : null}

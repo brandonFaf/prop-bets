@@ -1,28 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
-
 .bingo-page,
 .bingo-admin {
-  color-scheme: light;
-  --bg: #f6f4ef;
-  --bg-accent: #f0e5d6;
-  --ink: #1c1c1c;
-  --muted: #5d5d5d;
-  --brand: #d95b26;
-  --brand-dark: #9f3a14;
-  --card: #ffffff;
-  --line: #d8cfc2;
-  --success: #2f7d52;
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: var(--ink);
+  font-family: inherit;
+  color: inherit;
 }
 
 .bingo-page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 28px 18px 80px;
-  background: radial-gradient(circle at top, var(--bg-accent), var(--bg));
-  min-height: 100vh;
 }
 
 .bingo-page a,
@@ -40,18 +25,28 @@
 }
 
 .bingo-page .bingo-header h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   margin: 0;
+}
+
+.bingo-page .bingo-beta {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 1px;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  vertical-align: middle;
 }
 
 .bingo-page .bingo-eyebrow {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-size: 12px;
-  color: var(--muted);
+  opacity: 0.7;
 }
 
 .bingo-page .bingo-actions {
@@ -61,7 +56,7 @@
 
 .bingo-page .bingo-link,
 .bingo-admin .bingo-link {
-  border: 1px solid var(--ink);
+  border: 1px solid currentColor;
   padding: 10px 16px;
   border-radius: 999px;
   font-weight: 600;
@@ -72,25 +67,24 @@
 
 .bingo-page .bingo-link:hover,
 .bingo-admin .bingo-link:hover {
-  background: var(--ink);
-  color: var(--bg);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .bingo-page .bingo-card-section,
 .bingo-page .bingo-controls,
 .bingo-page .bingo-winners {
-  background: var(--card);
+  background: rgba(0, 0, 0, 0.03);
   padding: 20px;
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 24px;
 }
 
 .bingo-admin {
-  background: var(--card);
+  background: rgba(0, 0, 0, 0.03);
   padding: 20px;
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   margin: 0 0 24px;
 }
 
@@ -105,7 +99,7 @@
 
 .bingo-page .bingo-subtitle {
   margin: 4px 0 0;
-  color: var(--muted);
+  opacity: 0.7;
 }
 
 .bingo-page .bingo-status span {
@@ -115,17 +109,15 @@
   border-radius: 999px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .bingo-page .status-win {
-  background: rgba(47, 125, 82, 0.15);
-  color: var(--success);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .bingo-page .status-wait {
-  background: rgba(217, 91, 38, 0.12);
-  color: var(--brand-dark);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .bingo-page .bingo-grid {
@@ -135,8 +127,8 @@
 }
 
 .bingo-page .bingo-cell {
-  background: #fbf9f5;
-  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.02);
+  border: 2px solid #ffffff;
   border-radius: 12px;
   padding: 12px;
   min-height: 70px;
@@ -153,24 +145,22 @@
 .bingo-page .bingo-cell.free {
   font-weight: 700;
   letter-spacing: 1px;
-  background: #fbe9d9;
-  border-color: var(--brand);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .bingo-page .bingo-cell.marked {
-  background: rgba(217, 91, 38, 0.18);
-  border-color: var(--brand);
+  background: #2e7d32;
+  color: #ffffff;
 }
 
 .bingo-page .bingo-cell.winning {
-  background: rgba(47, 125, 82, 0.2);
-  border-color: var(--success);
+  background: #2e7d32;
   transform: scale(1.02);
 }
 
 .bingo-page .bingo-controls-header p {
   margin-top: 6px;
-  color: var(--muted);
+  opacity: 0.7;
 }
 
 .bingo-page .bingo-options,
@@ -183,10 +173,10 @@
 
 .bingo-page .bingo-option,
 .bingo-admin .bingo-option {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px 14px;
   border-radius: 14px;
-  background: #faf7f1;
+  background: rgba(0, 0, 0, 0.02);
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -198,16 +188,15 @@
 
 .bingo-page .bingo-option strong,
 .bingo-admin .bingo-option strong {
-  color: var(--success);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  opacity: 0.8;
 }
 
 .bingo-page .bingo-option:hover:not(:disabled),
 .bingo-admin .bingo-option:hover:not(:disabled) {
-  border-color: var(--brand);
-  background: #fff5ea;
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .bingo-page .bingo-option:disabled,
@@ -218,8 +207,7 @@
 
 .bingo-page .bingo-option.done,
 .bingo-admin .bingo-option.done {
-  border-color: var(--success);
-  background: rgba(47, 125, 82, 0.1);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .bingo-page .bingo-winners ol {
