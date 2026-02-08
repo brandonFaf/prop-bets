@@ -195,6 +195,9 @@ const Bingo = () => {
           <h1>
             Prop Bets Bingo <span className="bingo-beta">Beta</span>
           </h1>
+          <p className="bingo-note">
+            This is new and may not work perfectly yet.
+          </p>
         </div>
         <div className="bingo-actions">
           <a href="/" className="bingo-link">

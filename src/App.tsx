@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Superbowl LX Prop Bets</h1>
-        {name ? <a href="#/bingo">Open Bingo</a> : null}
+        {name ? <a href="#/bingo">Open Bingo (Beta)</a> : null}
       </header>
       {name ? <Leaderboard name={name} /> : <Questionaire />}
     </div>
