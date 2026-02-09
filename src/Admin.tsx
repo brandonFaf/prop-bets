@@ -79,7 +79,7 @@ const Admin = () => {
     setQuestions([]);
   };
 
-  const handleAnswerUpdate = async (questionId: number, answer: string) => {
+  const handleAnswerUpdate = async (questionId: number, answer: string[]) => {
     try {
       const updatedQuestions = questions.map((q) =>
         q.id === questionId ? { ...q, final: answer } : q,
@@ -96,6 +96,18 @@ const Admin = () => {
     } catch (err) {
       setError('Failed to update answer');
     }
+  };
+
+  const toggleFinalAnswer = (question: Question, letter: string) => {
+    const currentFinal = Array.isArray(question.final)
+      ? question.final
+      : question.final
+      ? [question.final]
+      : [];
+    const nextFinal = currentFinal.includes(letter)
+      ? currentFinal.filter((item) => item !== letter)
+      : [...currentFinal, letter];
+    handleAnswerUpdate(question.id, nextFinal);
   };
 
   const occurredSet = useMemo(() => new Set(bingoGame.occurred), [bingoGame]);
@@ -216,23 +228,39 @@ const Admin = () => {
             <tbody>
               {questions.map((q) => (
                 <tr key={q.id}>
-                  <td style={styles.td}>{q.text}</td>
-                  <td style={styles.td}>{q.final || 'Not set'}</td>
-                  <td style={styles.td}>
-                    <select
-                      value={q.final || ''}
-                      onChange={(e) => handleAnswerUpdate(q.id, e.target.value)}
-                    >
-                      <option value="">Select answer</option>
-                      {q.answers.map((a) => (
-                        <option key={a.letter} value={a.letter}>
-                          {a.letter} - {a.value}
-                        </option>
-                      ))}
-                    </select>
-                  </td>
-                </tr>
-              ))}
+              <td style={styles.td}>{q.text}</td>
+              <td style={styles.td}>
+                {Array.isArray(q.final)
+                  ? q.final.join(', ')
+                  : q.final || 'Not set'}
+              </td>
+              <td style={styles.td}>
+                {q.answers.length ? (
+                  <div style={{ display: 'grid', gap: 6 }}>
+                    {q.answers.map((a) => {
+                      const isChecked = Array.isArray(q.final)
+                        ? q.final.includes(a.letter)
+                        : q.final === a.letter;
+                      return (
+                        <label key={a.letter} style={{ display: 'flex' }}>
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => toggleFinalAnswer(q, a.letter)}
+                          />
+                          <span style={{ marginLeft: 8 }}>
+                            {a.letter} - {a.value}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <span>Free text response</span>
+                )}
+              </td>
+            </tr>
+          ))}
             </tbody>
           </table>
         </div>

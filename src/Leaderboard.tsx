@@ -76,7 +76,14 @@ const Leaderboard = ({ name }: { name: string }) => {
       ...data,
       score: data.responses.reduce((acc, { value }, i) => {
         const question = currentQuestions[i];
-        if (question && question.final && value === question.final) {
+        if (!question || !question.final) return acc;
+        if (Array.isArray(question.final)) {
+          if (question.final.includes(value)) {
+            return acc + 1;
+          }
+          return acc;
+        }
+        if (value === question.final) {
           return acc + 1;
         }
         return acc;
@@ -95,12 +102,17 @@ const Leaderboard = ({ name }: { name: string }) => {
         <div>
           <ol>
             {questions.map((question, i) => {
+              const finalSet = Array.isArray(question.final)
+                ? question.final
+                : question.final
+                ? [question.final]
+                : [];
               let correct;
-              if (!question.final || question.final === '') {
+              if (finalSet.length === 0) {
                 correct = 'var(--text-color)';
               } else {
-                correct =
-                  question.final === answers[i]?.value ? 'green' : 'red';
+                const isCorrect = finalSet.includes(answers[i]?.value);
+                correct = isCorrect ? 'green' : 'red';
               }
               return (
                 <li key={i} style={{ marginBottom: 15, color: correct }}>
@@ -122,18 +134,19 @@ const Leaderboard = ({ name }: { name: string }) => {
                               answers[i]?.value === a.letter
                                 ? 'bold'
                                 : 'normal',
-                            color: question.final
-                              ? question.final === a.letter
-                                ? 'green'
-                                : answers[i]?.value === a.letter
-                                ? 'red'
-                                : 'var(--text-color)'
-                              : 'var(--text-color)',
+                            color:
+                              finalSet.length > 0
+                                ? finalSet.includes(a.letter)
+                                  ? 'green'
+                                  : answers[i]?.value === a.letter
+                                  ? 'red'
+                                  : 'var(--text-color)'
+                                : 'var(--text-color)',
                           }}
                         >
-                          {question.final
+                          {finalSet.length > 0
                             ? answers[i]?.value === a.letter
-                              ? question.final === a.letter
+                              ? finalSet.includes(a.letter)
                                 ? '✅'
                                 : '❌'
                               : undefined

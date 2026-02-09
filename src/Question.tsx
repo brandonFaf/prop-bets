@@ -7,10 +7,14 @@ const Question: React.FC<{
   state: UserResponse[];
 }> = ({ question, setState, state }) => {
   const [value, setValue] = useState<string>();
-  let answer;
-  if (question.final) {
-    answer = question.answers.find((x) => x.letter === question.final);
-  }
+  const finalLetters = Array.isArray(question.final)
+    ? question.final
+    : question.final
+    ? [question.final]
+    : [];
+  const finalAnswers = finalLetters
+    .map((letter) => question.answers.find((x) => x.letter === letter))
+    .filter(Boolean);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newState = [...state];
     newState[question.id] = { value: e.target.value };
@@ -22,7 +26,7 @@ const Question: React.FC<{
   return (
     <li style={{ marginBottom: 15 }}>
       <div>{question.text}</div>
-      {!answer ? (
+      {!finalAnswers.length ? (
         <div
           style={{
             display: 'grid',
@@ -54,7 +58,9 @@ const Question: React.FC<{
         </div>
       ) : (
         <strong>
-          {answer.letter}) {answer.value}
+          {finalAnswers
+            .map((answer) => `${answer?.letter}) ${answer?.value}`)
+            .join(' or ')}
         </strong>
       )}
     </li>

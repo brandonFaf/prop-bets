@@ -52,7 +52,12 @@ const Questionaire = () => {
     if (!name) {
       setError('Please enter your name');
     } else if (
-      state.filter((x) => x).length !== questions.filter((x) => !x.final).length
+      state.filter((x) => x).length !==
+      questions.filter((q) => {
+        if (!q.final) return true;
+        if (Array.isArray(q.final)) return q.final.length === 0;
+        return q.final === '';
+      }).length
     ) {
       setError('Please answer all the questions');
     } else {

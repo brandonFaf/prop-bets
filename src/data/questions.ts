@@ -7,7 +7,7 @@ export interface Question {
   id: number;
   text: string;
   answers: Answer[];
-  final?: string;
+  final?: string | string[];
 }
 
 const questions: Question[] = [
